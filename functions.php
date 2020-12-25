@@ -142,8 +142,19 @@ add_action( 'widgets_init', 'ksk_agency_widgets_init' );
 /**
  * Enqueue scripts and styles.
  */
+
+ /*
+	
+
+
+ */
 function ksk_agency_scripts() {
-	wp_enqueue_style( 'ksk_agency-style', get_stylesheet_uri(), array(), _S_VERSION );
+	wp_enqueue_style( "normalize", get_template_directory_uri()."/css/normalize.css", array(), "8.0.1" );
+	wp_enqueue_style('google_font', "https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,600;1,400&family=Raleway:ital,wght@0,700;1,500&display=swap", array(), "1.0.0");
+	wp_enqueue_style( 'ksk_agency-style', get_stylesheet_uri(), array("normalize", "google_font"), _S_VERSION );
+	// hoja de estylos secundarias
+	wp_enqueue_style( 'ksk_agency-style-secundario', get_stylesheet_directory_uri().'/css/style.css', array('ksk_agency-style'), '1.0.0');
+	
 	wp_style_add_data( 'ksk_agency-style', 'rtl', 'replace' );
 
 	wp_enqueue_script( 'ksk_agency-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
