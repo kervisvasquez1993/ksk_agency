@@ -15,11 +15,20 @@
 get_header();
 ?>
 
-	<main id="primary" class="site-main">
+	<?php while(have_posts()) : the_post();?>
 
-		
-	</main><!-- #main -->
+		<h1><?php the_title(); ?></h1>
+			<?php 
+				if(has_post_thumbnail()) :
+
+					the_post_thumbnail('medianos'); //tamaños => thumbnail, medium, large, full 
+
+				/* else:
+					echo "no hay nada"; */
+				endif;
+			?>
+		<?php the_content();?>
+    <?php endwhile;?>
 
 <?php
-get_sidebar();
 get_footer();

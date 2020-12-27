@@ -40,6 +40,12 @@ if ( ! function_exists( 'ksk_agency_setup' ) ) :
 		 */
 		add_theme_support( 'title-tag' );
 
+		add_image_size( "square", "350", "350", true );
+		add_image_size( "portrait", "350", "724", true );
+		add_image_size( "cajas", "400", "375", true );
+		add_image_size( "medianos", "700", "400", true );
+		add_image_size( "blog", "966", "644", true );
+
 		/*
 		 * Enable support for Post Thumbnails on posts and pages.
 		 *
@@ -196,4 +202,5 @@ require get_template_directory() . '/inc/customizer.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
+
 
