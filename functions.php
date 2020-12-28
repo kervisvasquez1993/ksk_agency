@@ -6,6 +6,7 @@
  *
  * @package ksk_agency
  */
+require( dirname( __FILE__ ) . '/post-type/portafolio.php' );
 
 if ( ! defined( '_S_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
