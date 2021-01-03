@@ -49,6 +49,7 @@ function ksk_agency_post_type() {
 		'exclude_from_search'   => false,
 		'publicly_queryable'    => true,
 		'capability_type'       => 'page',
+		'taxonomies'  => array( 'category', 'tag' ),
 	);
 	register_post_type( 'ksk_agency', $args );
 
