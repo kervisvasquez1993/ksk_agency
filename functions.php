@@ -8,6 +8,7 @@
  */
 require( dirname( __FILE__ ) . '/post-type/portafolio.php' );
 require get_template_directory().'/inc/querys.php';
+require get_template_directory().'/inc/widget-personalizado.php';
 
 if ( ! defined( '_S_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
