@@ -16,4 +16,4 @@
 			?>
 
 			<?php the_content(); ?>
-		<?php endwhile; ?>
+<?php endwhile; ?>

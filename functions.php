@@ -177,14 +177,14 @@ function ksk_agency_scripts() {
 	wp_enqueue_style( 'ksk_agency-style-secundario', get_stylesheet_directory_uri().'/css/style.css', array('ksk_agency-style'), '1.0.0');
 	wp_enqueue_style( "slicknavCss", get_template_directory_uri()."/css/slicknav.min.css", array(), "1.0.0" );
 	wp_style_add_data( 'ksk_agency-style', 'rtl', 'replace' );
-
 	// incluir js 
-
-	wp_enqueue_script( "slicknavJs", get_template_directory_uri()."/js/jquery.slicknav.min.js", array('jquery'), "1.0.0", true );
-
+    wp_enqueue_script( "slicknavJs", get_template_directory_uri()."/js/jquery.slicknav.min.js", array('jquery'), "1.0.0", true );
 	wp_enqueue_script( "scripts", get_template_directory_uri()."/js/scripts.js", array("jquery", "slicknavJs"), "1.0.0", true );
 	wp_enqueue_script( 'ksk_agency-navigation', get_template_directory_uri().'/js/navigation.js', array(), _S_VERSION, true );
-
+    if(is_page('galeria')):
+	    wp_enqueue_style( 'lightboxCSS', get_stylesheet_directory_uri().'/css/lightbox.min.css', array(), '1.0.0');
+		wp_enqueue_script( "lightboxJs", get_template_directory_uri()."/js/lightbox.min.js", array(), "1.0.0", true );
+    endif;
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
