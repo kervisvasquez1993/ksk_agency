@@ -17,9 +17,12 @@ get_header();
 
 
 <main class="pagina seccion no-sidebars contenedor">
+<?php $categoria = get_queried_object(); // retorna el query que se este ejecuntando en ese preciso momento?>
+            <h2 class="text-center texto-primario">
+               Categoria: <?php echo $categoria->name; ?>
+            </h2>
     <ul class="listado-blog">
             <?php get_template_part('template-parts/loop', 'blog');?>
-    
     </ul>
 </main>
 

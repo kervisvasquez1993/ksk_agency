@@ -55,6 +55,9 @@ if ( ! function_exists( 'ksk_agency_setup' ) ) :
 		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 		 */
 		add_theme_support( 'post-thumbnails' );
+		// titulos seo
+
+		add_theme_support( "title-tag");
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus(
