@@ -16,5 +16,5 @@ get_header();
 ?>
 <h1>hola desde index</h1>
 <?
-get_sidebar();
+
 get_footer();

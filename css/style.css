@@ -305,13 +305,31 @@ img{
 }
 
 /* proyectos*/
-.lista-proyectos
+.lista-proyectos,
+.listado-blog
 {
     margin-top: 4rem;
 }
+
+.listado-blog .contenido
+{
+    padding: 0  2rem 2rem 2rem;
+    text-align: center;
+}
+@media(min-width:768px)
+{
+    .listado-blog .contenido {
+        text-align: left;
+    }
+}
+
+.listado-blog h3 {
+    margin: 0;
+}
 @media(min-width: 768px)
 {
-    .lista-proyectos
+    .lista-proyectos,
+    .listado-blog
     {
         display: flex;
         flex-wrap: wrap;
@@ -345,11 +363,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
     {
         flex: 0 0 calc(50% - 2rem);
         position: relative;
+        border: none;
     }   
 }
 .card
 {
     margin-bottom: 4rem;
+    border-bottom: 1px solid var(--grisClaro);
 }
 .card img
 {
@@ -357,7 +377,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
 }
 .card .contenido
 {
-    padding: 3rem;
+    padding: 1.5rem;
 }
 
 @media(min-width: 768px)
@@ -401,6 +421,76 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
     }    
 }
 
+.card .contenido .meta,
+.card .contenido .meta a {
+    color: var(--negro);
+}
+@media(min-width: 768px)
+{
+    .card .contenido .meta,
+.card .contenido .meta a {
+    color: var(--blanco);
+}
+}
+
+.card .contenido .meta span
+{
+    color: var(--colorPrimario);
+    font-weight: 700;
+}
+.card .contenido .meta
+{
+    font-size: 1.4rem;
+}
+
+.post-categories{
+    display: flex;
+    justify-content: center;
+}
+
+@media(min-width:768px)
+{
+    .post-categories
+{
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    z-index: 10;
+    
+}
+}
+.post-categories li
+{
+    background: var(--blanco);
+    padding: 0.5rem 2rem;
+    margin-right: 2rem;
+    border-radius: 0.5rem;
+
+}
+@media(min-width:768px)
+{
+    .post-categories li
+    {
+        background: var(--colorPrimario);
+    }
+}
+
+.post-categories li a {
+    font-size: 2.2rem;
+    font-family: var(--fuentePrincipal);
+    color: var(--grisOscuro);
+}
+@media(min-width:768px)
+{
+    .post-categories li a
+    {
+        color: var(--blanco);
+    }
+}
+.post-categories li:last-of-type
+{
+    margin-right: 0;
+}
 /* galeria */
 
 .galeria-imagenes
@@ -449,3 +539,4 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
         grid-column:  2 / 3;
     }   
 }
+
