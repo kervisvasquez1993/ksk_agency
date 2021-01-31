@@ -221,4 +221,23 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+function ksk_agency_hero_image()
+{
+	// obtener id de la pagina pricipal
+	$front_page_id = get_option("page_on_front");
+	//obtener hero 
+	$id_imagen = get_field('imagen_hero', $front_page_id);
+	$imagen  = wp_get_attachment_image_src($id_imagen, 'full')[0];
+	//style 
+	wp_register_style("custom", false);
+	wp_enqueue_style("custom");
+	$iamgen_destacada_css = "
+		body.home .site-header
+	    {
+		  background-image: linear-gradient( rgba(0,0,0,0.75), rgba(0,0,0,0.75) ), url($imagen) !important;
+		}	
+	";
+	wp_add_inline_style('custom', $iamgen_destacada_css);
+}
 
+add_action( "init", 'ksk_agency_hero_image' );

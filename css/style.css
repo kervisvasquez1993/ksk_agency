@@ -194,6 +194,10 @@ img{
     margin: 3rem 0;
     padding: 1.5rem;
 }
+body.home .slicknav_menu
+{
+    background-color: transparent !important;
+} 
 .slicknav_menu{
     background: var(--grisOscuro) !important;
     display: flex;
@@ -540,3 +544,37 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
     }   
 }
 
+.wpcf7 label
+{
+    font-weight: 700;
+
+}  
+
+.wpcf7-form .wpcf7-form-control {
+    width: 100%;
+    padding: 1rem;
+    height: 4rem;
+    border: 1px solid var(--grisClaro);
+
+}
+
+.wpcf7-form .wpcf7-textarea
+{
+    height: 20rem;
+
+}
+.wpcf7-form .wpcf7-submit
+{
+    background-color: var(--colorPrimario);
+    font-size: 2rem;
+    font-family: var(--fuentePrincipal);
+    padding: 1.2rem;
+}
+
+.wpcf7-form .wpcf7-submit:hover
+{
+    cursor: pointer;
+}
+.wpcf7 form.invalid .wpcf7-response-output, .wpcf7 form.unaccepted .wpcf7-response-output{
+    background: yellow;
+}
