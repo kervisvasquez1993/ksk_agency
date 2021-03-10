@@ -631,3 +631,54 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
 .wpcf7 form.invalid .wpcf7-response-output, .wpcf7 form.unaccepted .wpcf7-response-output{
     background: yellow;
 }
+
+/* fron page */
+
+.bienvenida p {
+    max-width: 800px;
+    margin: 0 auto;
+}
+.contenido-areas{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.contenedor-areas .contenido-area
+{
+    flex: 0 0 100%;
+    height: 250px;
+}
+
+@media (min-width:480px)
+{
+    .contenido-areas .area
+    {
+        flex: 0 0 50%;
+        height: 250px;
+    }
+    
+    
+}
+@media (min-width:768px)
+{
+    .contenido-areas .area {
+        flex: 0 0 25%;
+        height: 300px;
+    }
+}
+.contenido-areas .area img {
+    height: 300px;
+    object-fit: cover;
+}
+
+.contenedor-areas .area::after
+{
+    content:"";
+    background: linear-gradient(
+        rgba(0,0,0,0.75),
+        rgba(0,0,0,0.75)
+    );
+    display: block;
+    width: 100%;
+    height: 100%;
+}
