@@ -56,4 +56,41 @@
         </div>
     </div>
 </section>
+
+<section class="instructores">
+    <div class="contenedor seccion">
+        <h2 class="text-center texto-primario">Nuestros Instructores</h2>
+        <p class="text-center">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores, architecto distinctio quaerat at earum qui!</p>
+        <ul class="listado-perfil">
+            <?php 
+                $args = array(
+                    'post_type' => 'perfil',
+                    'posts_per_page' => -1
+                );
+
+                $perfil = new WP_Query($args);
+
+                while($perfil->have_posts()) : $perfil->the_post();
+            ?>
+
+                    <li class="perfil">
+                        <?php the_post_thumbnail("mediano")?>
+                        <div class="contendio text-center">
+                            <h3><?php the_title(); ?></h3>
+                            <?php the_content(); ?>
+                            <div class="especialidad">
+                                <?php 
+                                 $esp = get_field('especialidad');
+                                 foreach($esp as $e):
+                                ?>
+                                    <span class="etiqueta"> <?php echo esc_html($e); ?></span>
+                                <?php endforeach;?>
+                            </div>
+                        </div>
+                    </li>
+
+            <?php endwhile; wp_reset_postdata();?>
+        </ul>
+    </div>
+</section>
 <?php get_footer();?>

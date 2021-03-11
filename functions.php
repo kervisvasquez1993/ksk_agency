@@ -7,6 +7,7 @@
  * @package ksk_agency
  */
 require( dirname( __FILE__ ) . '/post-type/portafolio.php' );
+require( dirname( __FILE__ ) . '/post-type/usuarios.php' );
 require get_template_directory().'/inc/querys.php';
 require get_template_directory().'/inc/widget-personalizado.php';
 
