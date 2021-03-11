@@ -75,7 +75,7 @@
 
                     <li class="perfil">
                         <?php the_post_thumbnail("mediano")?>
-                        <div class="contendio text-center">
+                        <div class="contenido text-center">
                             <h3><?php the_title(); ?></h3>
                             <?php the_content(); ?>
                             <div class="especialidad">
