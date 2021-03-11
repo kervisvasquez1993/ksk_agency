@@ -87,6 +87,38 @@ img{
 {
     padding: 5rem 0;
 }
+
+.contenedor-boton
+{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.boton
+{
+    background: var(--blanco);
+    color: var(--negro);
+    padding: 1rem 3rem;
+    display: block;
+    flex: 1;
+    text-align: center;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: .5rem;
+}
+@media(min-width:768px )
+{
+    .boton
+    {
+        display: inline-block;
+        flex: 0 0 auto;
+    }
+}
+.boton-primario
+{
+    background: var(--colorPrimario);
+    color: var(--blanco);
+}
 /*header*/
 body.home .site-header{
     padding-top: 2rem;
@@ -643,10 +675,18 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
     flex-wrap: wrap;
 }
 
-.contenedor-areas .contenido-area
+.contenido-areas .area
 {
     flex: 0 0 100%;
     height: 250px;
+    position: relative !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+
+    
+    
 }
 
 @media (min-width:480px)
@@ -664,21 +704,57 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
     .contenido-areas .area {
         flex: 0 0 25%;
         height: 300px;
+        position: relative;
     }
 }
 .contenido-areas .area img {
-    height: 300px;
+    height: 250px;
     object-fit: cover;
 }
 
-.contenedor-areas .area::after
+@media(min-width: 768px)
 {
-    content:"";
+    .contenido-areas .area img {
+        height: 300px;
+       
+    }
+}
+
+.contenido-areas .area::after
+{
+    content:"kervis vasquez";
     background: linear-gradient(
-        rgba(0,0,0,0.75),
-        rgba(0,0,0,0.75)
+        rgba(0,0,0,0.65),
+        rgba(0,0,0,0.65)
     );
     display: block;
     width: 100%;
     height: 100%;
+    position: absolute;
+    top: 0;
+
+    
+}
+
+.area p 
+{
+    position: absolute;
+    margin: auto;
+    font-weight: 900;
+    font-size: 2rem;
+    color: var(--blanco);
+    z-index: 100;
+}
+@media(min-width: 768px)
+{
+    .area p 
+    {
+        opacity: 0;
+        transition: opacity .5s ease-in-out;
+    }
+
+    .area:hover p
+    {
+        opacity: 1;
+    }
 }

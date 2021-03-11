@@ -44,4 +44,16 @@
         </li>
     </ul>
 </div>
+
+<section class="clases">
+    <div class="contenedor seccion">
+        <h2 class="text-center texto-primario"> Nuestros Proyectos</h2>
+        <?php ksk_lista_proyecto(4); ?>
+        <div class="contenedor-boton">
+            <a href="<?php echo esc_url(get_permalink(get_page_by_title('Portafolio')));?>" class="boton boton-primario">
+                Ver Todo los Proyectos
+            </a>
+        </div>
+    </div>
+</section>
 <?php get_footer();?>

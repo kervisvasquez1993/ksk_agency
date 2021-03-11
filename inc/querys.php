@@ -1,12 +1,12 @@
 <?php
-function ksk_lista_proyecto()
+function ksk_lista_proyecto($cantidad = -1 )
 {
     ?>
         <ul class="lista-proyectos">
             <?php
                 $arg = array(
                     'post_type' => 'ksk_agency',
-                    'post_per_page' => -1,
+                    'posts_per_page' => $cantidad,
                     'orderby' => "title",
                     "order" => "ASC"
                     /* 'ASC' => 
