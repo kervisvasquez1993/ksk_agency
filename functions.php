@@ -189,6 +189,11 @@ function ksk_agency_scripts() {
 	    wp_enqueue_style( 'lightboxCSS', get_stylesheet_directory_uri().'/css/lightbox.min.css', array(), '1.0.0');
 		wp_enqueue_script( "lightboxJs", get_template_directory_uri()."/js/lightbox.min.js", array(), "1.0.0", true );
     endif;
+	if(is_page('inicio')):
+	    wp_enqueue_style( 'bxsliderCss', 'https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css', array(), '4.2.12');
+		wp_enqueue_script( "bxsliderJs", "https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js", array('jquery'), "4.2.12", true );
+    endif;
+
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}

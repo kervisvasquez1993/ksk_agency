@@ -68,6 +68,8 @@
                     'posts_per_page' => -1
                 );
 
+                
+                
                 $perfil = new WP_Query($args);
 
                 while($perfil->have_posts()) : $perfil->the_post();
@@ -92,5 +94,36 @@
             <?php endwhile; wp_reset_postdata();?>
         </ul>
     </div>
+</section>
+
+
+<section class="testimoniales">
+      <h3 class="text-center texto-blanco">Testimoliales</h3>
+      <div class="contenido-testimoniales">
+          <ul class="listado-testimoniales">
+              <?php 
+                $arg = array(
+                    'post_type' => 'testimoniales',
+                    'posts_per_page' => 5
+                );
+                
+                $testimonial = new WP_Query($arg);
+                
+                while($testimonial->have_posts()): $testimonial->the_post();
+              ?>
+
+                <li class="testimonial text-center">
+                    <blockquote>
+                        <?php the_content();?>
+                    </blockquote>
+                    <footer class="testimonail-footer">
+                        <?php the_post_thumbnail('thumbnail');?>
+                        <p><?php the_title(); ?></p>
+                    </footer>
+                </li>
+
+              <?php endwhile; wp_reset_postdata();?>
+          </ul>
+      </div>                              
 </section>
 <?php get_footer();?>
